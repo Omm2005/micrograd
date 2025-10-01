@@ -17,30 +17,6 @@ Requirements
 - Python 3.8+ recommended.
 - PyTorch is required only for running the tests (used as a reference implementation).
 
-Installation (editable)
------------------------
-
-Create an isolated environment and install the package locally:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -U pip pytest
-
-# Install PyTorch (CPU-only). On Apple Silicon/Intel mac:
-pip install torch --index-url https://download.pytorch.org/whl/cpu
-
-# Install this repo in editable mode
-pip install -e .
-```
-
-Notes on Python/PyTorch versions
---------------------------------
-
-- If you are on Python 3.13 and the stable channel fails to provide wheels, try nightly:
-  `pip install --pre torch --index-url https://download.pytorch.org/whl/nightly/cpu`
-- Alternatively, use Python 3.12 where stable wheels are broadly available.
-
 Run Tests
 ---------
 
@@ -48,12 +24,6 @@ From the repository root:
 
 ```bash
 pytest -q
-```
-
-If you prefer not to install the package, you can run with an explicit path:
-
-```bash
-PYTHONPATH=. pytest -q
 ```
 
 Quick Autograd Demo
