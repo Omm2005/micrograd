@@ -127,5 +127,6 @@ Troubleshooting
 License and Attribution
 -----------------------
 
-This educational project is inspired by Andrej Karpathy’s original micrograd (MIT licensed).
-# micrograd
+- License: MIT (see LICENSE)
+- Original project: Andrej Karpathy’s micrograd — https://github.com/karpathy/micrograd
+- This repo contains adaptations based on the original; the MIT license and original notice are preserved.

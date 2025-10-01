@@ -12,9 +12,10 @@ class Module:
 
 class Neuron(Module):
 
-    def __init__(self, nin):
+    def __init__(self, nin, nonlin=True):
         self.w = [Value(random.uniform(-1, 1)) for _ in range(nin)]
         self.b = Value(random.uniform(-1, 1))
+        self.nonlin = nonlin
     
     def __call__(self, x):
         # Weighted sum
@@ -30,8 +31,8 @@ class Neuron(Module):
 
 class Layers(Module):
 
-    def __init__(self, nin, nout):
-        self.neurons = [Neuron(nin) for _ in range(nout)]
+    def __init__(self, nin, nout, nonlin=True):
+        self.neurons = [Neuron(nin, nonlin=nonlin) for _ in range(nout)]
     
     def __call__(self, x):
         outs = [n(x) for n in self.neurons]
@@ -47,7 +48,10 @@ class MLP(Module):
 
     def __init__(self, nin, nouts):
         sz = [nin] + nouts
-        self.layers = [Layers(sz[i], sz[i+1]) for i in range(len(nouts))]
+        self.layers = []
+        for i in range(len(nouts)):
+            nonlin = (i != len(nouts) - 1)
+            self.layers.append(Layers(sz[i], sz[i+1], nonlin=nonlin))
     
     def __call__(self, x):
         for layer in self.layers:
