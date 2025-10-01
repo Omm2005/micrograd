@@ -1,7 +1,7 @@
 micrograd
 =========
 
-Tiny scalar-valued autograd engine with a minimal neural network library, inspired by Andrej Karpathy’s micrograd. It demonstrates how reverse‑mode automatic differentiation works end‑to‑end, with a handful of ops, a simple `Value` scalar type, and a tiny MLP built on top.
+Tiny scalar-valued autograd engine with a minimal neural network library, inspired by Andrej Karpathy’s micrograd. It demonstrates how reverse‑mode automatic differentiation works end‑to‑end, with a handful of ops, a simple `Value` scalar type, and a tiny MLP built on top. too many cool words
 
 Project Layout
 --------------
